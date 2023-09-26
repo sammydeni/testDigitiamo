@@ -33,7 +33,7 @@ async function getAllData() {
 
 <template>
   <div class="container">
-    <SearchBar @fetch-data="getAllData" />
+    <SearchBar @fetch-data="getAllData" class="search-bar" />
     <div class="results" v-if="dataPack">
       <p class="status">{{ dataPack.status }}</p>
       <p class="status-message">{{ dataPack.statusMessage }}</p>
@@ -44,10 +44,23 @@ async function getAllData() {
 <style scoped>
 .container {
   width: 100%;
+  display: grid;
+  grid-template-areas: 'div2' 'div1';
+}
+
+.search-bar {
+  grid-area: div2;
 }
 .results {
   font-family: Helvetica;
   text-align: center;
+  grid-area: div1;
+}
+
+@media only screen and (min-width: 500px) {
+  .container {
+    grid-template-areas: 'div1' 'div2';
+  }
 }
 .status {
   font-size: 5rem;
