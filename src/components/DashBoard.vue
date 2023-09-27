@@ -66,12 +66,13 @@ async function getAllData() {
   }
 }
 .status {
-  font-size: 5rem;
+  font-size: 4rem;
   margin-top: 2rem;
   margin-bottom: 0;
 }
 
 .status-message {
   font-size: 1.5em;
+  margin: 1rem;
 }
 </style>
