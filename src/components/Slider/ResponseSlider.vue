@@ -20,9 +20,6 @@ const dataPack = props.dataPack
       >
         <ResponseCard :dataPack="responseItem" />
       </div>
-
-      <div class="card"><h1>PIO CALABBRISI</h1></div>
-      <div class="card"><h1>LOL</h1></div>
     </div>
   </div>
 </template>
@@ -60,5 +57,9 @@ const dataPack = props.dataPack
 .card:first-child {
   margin-left: 1rem;
   background-color: rgb(238, 238, 238);
+}
+
+.card:last-child {
+  margin-right: 1rem;
 }
 </style>
