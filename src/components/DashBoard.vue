@@ -45,6 +45,7 @@ async function getAllData() {
 
 <style scoped>
 .container {
+  margin-top: 1rem;
   width: 100%;
   display: grid;
   grid-template-areas: 'div2' 'div1';

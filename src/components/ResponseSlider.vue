@@ -8,8 +8,8 @@ const props = defineProps(['dataPack'])
       <div class="card">
         <h1>{{ props.dataPack.status }}</h1>
       </div>
-      <div class="card"><h1>EEEE</h1></div>
-      <div class="card"><h1>LOOOL</h1></div>
+      <div class="card"><h1>PIO CALABBRISI</h1></div>
+      <div class="card"><h1>LOL</h1></div>
       <div class="card"><h1>CACA</h1></div>
       <div class="card"><h1>WERT</h1></div>
     </div>
@@ -19,7 +19,7 @@ const props = defineProps(['dataPack'])
 <style scoped>
 .content {
   width: 100vw;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .slider {
   display: grid;
@@ -37,25 +37,23 @@ const props = defineProps(['dataPack'])
 }
 
 .card {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   border-radius: 30px;
   min-height: 15rem;
-  min-width: 20rem;
+  min-width: 21rem;
   display: flex;
   align-items: center;
   justify-items: center;
   text-align: center;
+  border: 1px solid rgb(238, 238, 238);
 }
 
 .card h1 {
   width: 100%;
 }
 
-.card:nth-child(odd) {
-  background-color: aquamarine;
-}
-
-.card:nth-child(even) {
-  background-color: blueviolet;
+.card:first-child {
+  margin-left: 1rem;
+  background-color: rgb(238, 238, 238);
 }
 </style>
