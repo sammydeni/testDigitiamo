@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import SearchBar from './SearchBar.vue'
+import ResponseSlider from './ResponseSlider.vue'
 
 const API_URL = `https://api.jsonbin.io/v3/b/`
 const X_MASTER_KEY = '$2a$10$Z6EQOHXv9hfHm4tL34IvKuU6ag/abdd2L1epWFOlEIFGmKiqOpU.6'
@@ -33,21 +34,36 @@ async function getAllData() {
 
 <template>
   <div class="container">
-    <SearchBar @fetch-data="getAllData" />
+    <SearchBar @fetch-data="getAllData" class="search-bar" />
     <div class="results" v-if="dataPack">
       <p class="status">{{ dataPack.status }}</p>
       <p class="status-message">{{ dataPack.statusMessage }}</p>
     </div>
+    <ResponseSlider v-if="dataPack" :data-pack="dataPack" />
   </div>
 </template>
 
 <style scoped>
 .container {
+  margin-top: 1rem;
   width: 100%;
+  display: grid;
+  grid-template-areas: 'div2' 'div1';
+}
+
+.search-bar {
+  grid-area: div2;
 }
 .results {
   font-family: Helvetica;
   text-align: center;
+  grid-area: div1;
+}
+
+@media only screen and (min-width: 500px) {
+  .container {
+    grid-template-areas: 'div1' 'div2';
+  }
 }
 .status {
   font-size: 5rem;
