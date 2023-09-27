@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import SearchBar from './SearchBar.vue'
+import ResponseSlider from './ResponseSlider.vue'
 
 const API_URL = `https://api.jsonbin.io/v3/b/`
 const X_MASTER_KEY = '$2a$10$Z6EQOHXv9hfHm4tL34IvKuU6ag/abdd2L1epWFOlEIFGmKiqOpU.6'
@@ -38,6 +39,7 @@ async function getAllData() {
       <p class="status">{{ dataPack.status }}</p>
       <p class="status-message">{{ dataPack.statusMessage }}</p>
     </div>
+    <ResponseSlider v-if="dataPack" :data-pack="dataPack" />
   </div>
 </template>
 
