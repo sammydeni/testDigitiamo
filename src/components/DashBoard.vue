@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import SearchBar from './SearchBar.vue'
-import ResponseSlider from './ResponseSlider.vue'
+import ResponseSlider from './Slider/ResponseSlider.vue'
 
 const API_URL = `https://api.jsonbin.io/v3/b/`
 const X_MASTER_KEY = '$2a$10$Z6EQOHXv9hfHm4tL34IvKuU6ag/abdd2L1epWFOlEIFGmKiqOpU.6'

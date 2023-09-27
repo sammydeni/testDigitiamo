@@ -1,19 +1,26 @@
 <script setup>
+import ResponseCard from './ResponseCard.vue'
+import UrlCard from './UrlCard.vue'
 const props = defineProps(['dataPack'])
+const dataPack = props.dataPack
 </script>
 
 <template>
   <div class="content">
     <div class="slider">
       <div class="card">
-        <p :style="{ margin: '0.5rem' }">{{ props.dataPack.url_info.title }}</p>
-        <div class="column-box">
-          <div class="line" v-for="(line, index) in props.dataPack.url_info.infoArray" :key="index">
-            <p class="name">{{ line.name }}</p>
-            <p class="info">{{ line.info }}</p>
-          </div>
-        </div>
+        <!-- render of url info card only -->
+        <UrlCard :dataPack="dataPack.url_info" />
       </div>
+      <!-- render of all the responses -->
+      <div
+        class="card"
+        v-for="(responseItem, index) in dataPack.response.responseArray"
+        :key="index"
+      >
+        <ResponseCard :dataPack="responseItem" />
+      </div>
+
       <div class="card"><h1>PIO CALABBRISI</h1></div>
       <div class="card"><h1>LOL</h1></div>
     </div>
@@ -21,23 +28,6 @@ const props = defineProps(['dataPack'])
 </template>
 
 <style scoped>
-.column-box {
-  display: flex;
-  flex-direction: column;
-}
-.line {
-  background-color: rgb(224, 224, 224);
-  padding: 0.25rem 0.5rem;
-  margin-bottom: 2px;
-}
-
-.line .name {
-  font-weight: bold;
-}
-
-.line .info {
-  font-size: 13px;
-}
 .content {
   width: 100vw;
   margin-top: 1rem;
@@ -64,18 +54,7 @@ const props = defineProps(['dataPack'])
   min-width: 21rem;
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-items: center;
-  text-align: center; */
   border: 1px solid rgb(238, 238, 238);
-}
-
-.card p {
-  margin: 0px;
-}
-
-.card h1 {
-  width: 100%;
 }
 
 .card:first-child {
