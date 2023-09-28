@@ -2,7 +2,6 @@
 import SpeedoMeter from './SpeedoMeter.vue'
 const props = defineProps(['dataAnalysis'])
 const data = props.dataAnalysis
-console.log(props.dataAnalysis.title)
 </script>
 <template>
   <p class="title">{{ data.title }}</p>

@@ -78,9 +78,11 @@ const open = () => {
     </div>
     <ResponseSlider v-if="dataPack" :data-pack="dataPack" />
 
-    <div class="share">
+    <div class="share" v-if="dataPack">
       <p>SHARE</p>
-      <button>URL</button>
+      <RouterLink :to="{ name: 'SharePage' }">
+        <button>URL</button>
+      </RouterLink>
     </div>
 
     <!-- analysis section -->
@@ -142,6 +144,9 @@ const open = () => {
     border-radius: 10px;
     padding: 5px;
     background-color: rgb(155, 163, 233);
+  }
+  .share {
+    visibility: hidden;
   }
 }
 

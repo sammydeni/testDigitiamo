@@ -1,4 +1,5 @@
 <script setup>
+const props = defineProps(['readOnly'])
 const emit = defineEmits(['fetch-data'])
 </script>
 
@@ -7,8 +8,8 @@ const emit = defineEmits(['fetch-data'])
     <div class="l-button">
       <button>GET</button>
     </div>
-    <input id="search" type="text" name="search" />
-    <div class="r-button">
+    <input id="search" type="text" name="search" :class="props.readOnly ? 'curved' : ''" />
+    <div class="r-button" v-if="!readOnly">
       <button @click="emit('fetch-data')">
         <font-awesome-icon :icon="['fas', 'magnifying-glass']" size="lg" />
       </button>
@@ -25,6 +26,10 @@ const emit = defineEmits(['fetch-data'])
   margin: 0 auto;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .l-button {
   background-color: rgb(238, 238, 238);
   border-radius: 15px 0px 0px 15px;
@@ -33,6 +38,11 @@ const emit = defineEmits(['fetch-data'])
   align-items: center;
   justify-content: center;
 }
+
+.curved {
+  border-radius: 0px 15px 15px 0px;
+}
+
 .r-button {
   background-color: rgb(238, 238, 238);
   border-radius: 0px 15px 15px 0px;
