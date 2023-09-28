@@ -1,5 +1,5 @@
 import './assets/main.css'
-
+import router from './router'
 import { createApp } from 'vue/dist/vue.esm-bundler'
 import App from './App.vue'
 
@@ -12,4 +12,4 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
 library.add(faSearch)
 
-createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(router).mount('#app')
