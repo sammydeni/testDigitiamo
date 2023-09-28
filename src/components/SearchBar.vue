@@ -1,6 +1,17 @@
 <script setup>
+import { ref } from 'vue'
+
 const props = defineProps(['readOnly'])
-const emit = defineEmits(['fetch-data'])
+const emit = defineEmits(['fetch-data, search'])
+
+const input = ref(null)
+
+function toggleSearch() {
+  emit('fetch-data')
+  if (input.value != null) {
+    emit('search', input)
+  }
+}
 </script>
 
 <template>
@@ -8,9 +19,15 @@ const emit = defineEmits(['fetch-data'])
     <div class="l-button">
       <button>GET</button>
     </div>
-    <input id="search" type="text" name="search" :class="props.readOnly ? 'curved' : ''" />
+    <input
+      id="search"
+      v-model="input"
+      type="text"
+      name="search"
+      :class="props.readOnly ? 'curved' : ''"
+    />
     <div class="r-button" v-if="!readOnly">
-      <button @click="emit('fetch-data')">
+      <button @click="toggleSearch">
         <font-awesome-icon :icon="['fas', 'magnifying-glass']" size="lg" />
       </button>
     </div>

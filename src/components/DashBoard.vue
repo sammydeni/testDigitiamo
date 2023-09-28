@@ -16,6 +16,7 @@ const url_analysis = `${API_URL}${BIN_ID_ANALYSIS}`
 
 const dataPack = ref(null)
 const dataAnalysis = ref(null)
+const searchText = ref(null)
 
 async function getAllData() {
   // fetch response data
@@ -58,6 +59,11 @@ async function getAllData() {
   }
 }
 
+function getSearch(value) {
+  console.log(value)
+  searchText.value = value
+}
+
 const myBottomSheet = ref(null)
 
 const open = () => {
@@ -71,7 +77,7 @@ const open = () => {
 
 <template>
   <div class="container">
-    <SearchBar @fetch-data="getAllData" class="search-bar" />
+    <SearchBar @fetch-data="getAllData" @search="getSearch" class="search-bar" />
     <div class="results" v-if="dataPack">
       <p class="status">{{ dataPack.status }}</p>
       <p class="status-message">{{ dataPack.statusMessage }}</p>
@@ -81,7 +87,7 @@ const open = () => {
     <div class="share" v-if="dataPack">
       <p>SHARE</p>
       <RouterLink :to="{ name: 'SharePage' }">
-        <button>URL</button>
+        <button>{{ searchText ? searchText : 'share' }}</button>
       </RouterLink>
     </div>
 
