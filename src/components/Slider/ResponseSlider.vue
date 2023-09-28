@@ -53,7 +53,7 @@ const dataPack = props.dataPack
 .card {
   scroll-snap-align: center;
   border-radius: 15px;
-  min-height: 25rem;
+  min-height: 23rem;
   min-width: 21rem;
   max-width: 25rem;
   display: flex;

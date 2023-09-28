@@ -78,6 +78,12 @@ const open = () => {
     </div>
     <ResponseSlider v-if="dataPack" :data-pack="dataPack" />
 
+    <div class="share">
+      <p>SHARE</p>
+      <button>URL</button>
+    </div>
+
+    <!-- analysis section -->
     <button @click="open" v-if="dataPack" class="bottom-sheet-button">Timing Analysis</button>
 
     <vue-bottom-sheet ref="myBottomSheet" v-if="dataAnalysis">
@@ -137,5 +143,16 @@ const open = () => {
     padding: 5px;
     background-color: rgb(155, 163, 233);
   }
+}
+
+.share {
+  margin: 1rem auto;
+}
+
+.share button {
+  border-radius: 30px;
+  background-color: rgb(238, 238, 238);
+  border: none;
+  font-size: 16px;
 }
 </style>
