@@ -40,6 +40,12 @@ const dataPack = props.dataPack
   scrollbar-width: none;
 }
 
+@media screen and (min-width: 1000px) {
+  .slider {
+    justify-content: center;
+  }
+}
+
 .slider::-webkit-scrollbar {
   display: none;
 }
@@ -47,8 +53,9 @@ const dataPack = props.dataPack
 .card {
   scroll-snap-align: center;
   border-radius: 15px;
-  min-height: 22rem;
+  min-height: 25rem;
   min-width: 21rem;
+  max-width: 25rem;
   display: flex;
   flex-direction: column;
   border: 1px solid rgb(238, 238, 238);
