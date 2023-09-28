@@ -1,0 +1,15 @@
+{
+  "title": "Timing Analysis",
+  "graphsArray": [
+    {
+      "score": 720,
+      "info": "Page Load",
+      "speed": "0.4s"
+    },
+    {
+      "score": 720,
+      "info": "First Interaction",
+      "speed": "0.9s"
+    }
+  ]
+}

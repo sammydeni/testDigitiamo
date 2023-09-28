@@ -1,35 +1,9 @@
 # testDigitiamo
 
-This template should help get you started developing with Vue 3 in Vite.
+Test Digitiamo
 
-## Recommended IDE Setup
+- HO utlizzato Vue per la creazione di tutta la parte FE
+- Per i file json ho utilizzato il sito 'https://jsonbin.io'
+- aggiungo i file response.json e analysis.json per visualizzare quanto creato su jsonbin.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Samuele Denicola

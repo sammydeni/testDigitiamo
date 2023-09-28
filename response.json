@@ -1,0 +1,36 @@
+{
+  "status": "200",
+  "statusMessage": "Everything is fine!",
+  "url_info": {
+    "title": "URL INFO",
+    "infoArray": {
+      "domain": {
+        "name": "DOMAIN",
+        "info": "www.webweb.com"
+      },
+      "scheme": {
+        "name": "SCHEME",
+        "info": "HTTP"
+      },
+      "path": {
+        "name": "PATH",
+        "info": "home"
+      }
+    }
+  },
+  "response": {
+    "title": "RESPONSE",
+    "responseArray": [
+      {
+        "status": "HTTP/1.1 302",
+        "info": "Location: /newpage.php",
+        "server": "Server: Apache/2.2.14 (Win32)"
+      },
+      {
+        "status": "HTTP/1.1 200 OK",
+        "info": "Date: Mon, 27 Jul 2009",
+        "server": "Server: Apache/2.2.14 (Win32)"
+      }
+    ]
+  }
+}
